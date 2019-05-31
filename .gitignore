@@ -1,1 +1,7 @@
 nomostrar/
+bin
+obj
+.vs
+/packages/*.*
+*.user
+*.suo
