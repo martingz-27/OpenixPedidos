@@ -1,7 +1,7 @@
 nomostrar/
-bin
-obj
+/gestor_comida/bin/
+/gestor_comida/obj/
 .vs
-/packages/*.*
+/gestor_comida/packages/*.*
 *.user
 *.suo
