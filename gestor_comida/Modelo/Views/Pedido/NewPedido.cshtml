@@ -1,43 +1,43 @@
-﻿@model Modelo.Models.DTO.MenuDTO
+﻿@model Modelo.Core.DTO.MenuDTO
 @{
     ViewBag.Title = "NewPedido";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Menu</h2>
-@using (Html.BeginForm("Create", "Pedido"))
-{
-    <table id="menuTable" class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Nombre de Plato</th>
-                <th>Precio del Plato</th>
-                <th>Guarniciones</th>
-                <th>Seleccionar</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var menu in Model._menuDTOs)
-            {
-                <tr>
-                    <td>@menu._NombrePlato</td>
-                    <td>@menu._PrecioPlato</td>
-                    <td>
-                        <div class="checkbox">
-                            <ul>
-                                @foreach (var item in menu._ListaNombreGuarniciones)
-                                {
-                                    <li><input type="checkbox" value="@item" id="checkItem" name="checkItem" />@item</li>
-                                }
-                            </ul>
-                        </div>
-                    </td>
-                    <td><button type="submit" class="btn btn-primary">Cargar</button></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
-<link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 
+<table id="menuTable" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Nombre de Plato</th>
+            <th>Precio del Plato</th>
+            <th>id</th>
+            <th>Guarniciones</th>
+            <th>Seleccionar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var men in Model.menus)
+        {
+            <tr>
+                <td>@Html.TextBoxFor(m => men.nombrePlatoDTO, new { @class = "form-control", @readonly = "readonly" })</td>
+                <td>@Html.TextBoxFor(m => men.precioPlatoDTO, new { @class = "form-control", @readonly = "readonly" })</td>
+                <td>@Html.TextBoxFor(m => men.idPlatoDTO, new { @class = "form-control", @readonly = "readonly" })</td>
+                <td>
+                    <div class="checkbox">
+                        <ul>
+                            @foreach (var item in men._ListaNombreGuarniciones)
+                            {
+                                <li><input type="checkbox" value="@item.id" id="checkItem" name="checkItem" />@item._NombreGuarnicion</li>
+                            }
+                        </ul>
+                    </div>
+                </td>
+                <td><button type="submit" class="btn btn-primary">Cargar</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 

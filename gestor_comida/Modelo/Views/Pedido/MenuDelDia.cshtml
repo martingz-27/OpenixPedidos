@@ -1,4 +1,4 @@
-﻿@model Modelo.Models.Menu
+﻿@model Modelo.Core.Models.Dominio.Menu
 @{
     ViewBag.Title = "MenuDelDia";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,15 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var menu in Model._menuDTOs)
-        {
-        <tr>
-            <td>@menu._NombrePlato</td>
-            <td>@menu._PrecioPlato</td>
-            <td>@Html.DropDownListFor(Model => Model._ListaNombreGuarniciones, new SelectList(menu._ListaNombreGuarniciones), "Seleccione Guarnicion/es", htmlAttributes: new { @class = "form-control" })</td>
-            <td><button type="submit" class="btn btn-primary">Elegir</button></td>
-        </tr>
-        }
+        
     </tbody>
 </table>
 

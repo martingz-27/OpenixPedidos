@@ -1,12 +1,11 @@
-﻿using Modelo.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Core.Models.Dominio;
+using Core.Repositorios;
+using Modelo.Models;
 
-namespace Modelo.Persistence.Repositorios
+
+namespace Persistence.Repositorios
 {
-    public class PedidoRepository
+    public class PedidoRepository : IPedidoRepository
     {
         protected readonly GestorComidaContext _gestorComidaContext;
 
@@ -30,7 +29,6 @@ namespace Modelo.Persistence.Repositorios
         {
             _gestorComidaContext.Pedidos.Remove(entity);
         }
-
         public void SaveChange()
         {
             _gestorComidaContext.SaveChanges();

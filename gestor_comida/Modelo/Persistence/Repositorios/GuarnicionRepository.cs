@@ -1,12 +1,14 @@
-﻿using Modelo.Models;
+﻿using Core.Models.Dominio;
+using Core.Repositorios;
+using Modelo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Modelo.Persistence.Repositorios
+namespace Persistence.Repositorios
 {
-    public class GuarnicionRepository
+    public class GuarnicionRepository : IGuarnicionRepository
     {
         protected readonly GestorComidaContext _gestorComidaContext;
 

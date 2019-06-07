@@ -1,12 +1,12 @@
-﻿using Modelo.Models.Interface;
-using System;
+﻿using Core.Models.Dominio;
+using Core.Repositorios;
+using Modelo.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
-namespace Modelo.Models.PatronRepositorio
+namespace Persistence.Repositorios
 {
-    public class PlatoRepository
+    public class PlatoRepository : IPlatoRepository
     {
         protected readonly GestorComidaContext _gestorComidaContext;
 
@@ -30,8 +30,7 @@ namespace Modelo.Models.PatronRepositorio
         {
             return _gestorComidaContext.Platos.ToList();
         }
-        
-
+    
         public void RemovePlato(Plato entity)
         {
             _gestorComidaContext.Platos.Remove(entity);

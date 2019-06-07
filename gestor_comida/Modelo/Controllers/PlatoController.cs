@@ -1,5 +1,6 @@
-﻿using Modelo.Models;
-using Modelo.Models.UnityOfWork;
+﻿using Core.Models;
+using Core.Models.Dominio;
+using Modelo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +13,17 @@ namespace Modelo.Controllers
 {
     public class PlatoController : Controller
     {
-        private readonly UnitOfWork _unitOfWork;
-
+        private readonly IUnitOfWork _unitOfWork;
+ 
+        
+        public PlatoController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
         public ActionResult New()
         {
             return View();
         }
-        public PlatoController()
-        {
-            this._unitOfWork = new UnitOfWork(new GestorComidaContext());
-            //InserPlato();
-        }
-
         [System.Web.Http.HttpPost]
         public ActionResult Create(Plato plato)
         {
@@ -35,13 +35,13 @@ namespace Modelo.Controllers
         public void InserPlato(Plato plato)
         {
             
-           _unitOfWork.PlatoRepository.AddPlato(plato);
+           _unitOfWork._PlatoRepo.AddPlato(plato);
            _unitOfWork.Complete();
         }
 
         public void GetListPlatos()
         {
-            _unitOfWork.PlatoRepository.GetAll();
+            _unitOfWork._PlatoRepo.GetAll();
         }
 
     }

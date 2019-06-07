@@ -1,12 +1,10 @@
-﻿using Modelo.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Core.Models.Dominio;
+using Core.Repositorios;
+using Modelo.Models;
 
-namespace Modelo.Persistence.Repositorios
+namespace Persistence.Repositorios
 {
-    public class PersonaRepository
+    public class PersonaRepository : IPersonaRepository
     {
         protected readonly GestorComidaContext _gestorComidaContext;
 

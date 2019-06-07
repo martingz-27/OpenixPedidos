@@ -1,27 +1,20 @@
-﻿using Modelo.Models;
-using Modelo.Models.UnityOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using Core.Models;
+using Core.Models.Dominio;
 using System.Web.Mvc;
 
 namespace Modelo.Controllers
 {
     public class PersonaController : Controller
     {
-        private readonly UnitOfWork _unitOfWork;
-
+        private readonly IUnitOfWork _unitOfWork;
+        
+        public PersonaController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
         public ActionResult NewPersona()
         {
             return View();
-        }
-        public PersonaController()
-        {
-            this._unitOfWork = new UnitOfWork(new GestorComidaContext());
-            
         }
 
         [System.Web.Http.HttpPost]
@@ -34,7 +27,7 @@ namespace Modelo.Controllers
 
         public void InserPersona(Persona persona)
         {
-            _unitOfWork.PersonaRepository.AddPersona(persona);
+            _unitOfWork._PersonaRepo.AddPersona(persona);
             _unitOfWork.Complete();
         }
     }

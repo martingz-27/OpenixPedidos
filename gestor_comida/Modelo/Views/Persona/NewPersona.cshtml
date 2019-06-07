@@ -1,4 +1,4 @@
-﻿@model Modelo.Models.Persona
+﻿@model Modelo.Core.Models.Dominio.Persona
 @{
     ViewBag.Title = "NewPersona";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -39,9 +39,7 @@
                 Value = "Cliente"
             });
         }
-
-        @Html.DropDownListFor(m => m._Rol, listItems, "Seleccione Rol",htmlAttributes: new { @class = "form-control" })
-        
+        @Html.DropDownListFor(m => m._Rol, listItems, "Seleccione Rol",htmlAttributes: new { @class = "form-control" })  
     </div>
     <button type="submit" class="btn btn-primary">Guardar</button>
 

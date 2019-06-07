@@ -4,24 +4,26 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Modelo.Models.DTO
+namespace Core.Models.Dominio
 {
-    public class MenuDTO
+    public class Plato
     {
-        [Display(Name = "Nombre de Plato")]
+        public int id { get; set; }
+        [Required]
+        [Display(Name ="Nombre de Plato")]
         public String _Nombre { get; set; }
 
         [Display(Name = "Precio del Plato")]
         public decimal _Precio { get; set; }
 
-        public List<String> _ListaNombreGuarniciones { get; set; }
-        
-        public IEnumerable<MenuDTO> _menuDTOs { get; set; }
-
-        public MenuDTO()
+        public Plato(String nombre, decimal precio)
         {
-
+            _Nombre = nombre;
+            _Precio = precio;
         }
 
+        public Plato()
+        {
+        }
     }
 }
