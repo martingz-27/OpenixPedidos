@@ -1,7 +1,7 @@
-﻿using Core.Repositorios;
+﻿using Modelo.Core.Repositorios;
 using Modelo.Models;
 
-namespace Core.Models.UnityOfWork
+namespace Modelo.Core.Models.UnityOfWork
 {
 
     public class UnitOfWork : IUnitOfWork

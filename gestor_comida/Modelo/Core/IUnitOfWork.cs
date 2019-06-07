@@ -1,6 +1,6 @@
-﻿using Core.Repositorios;
+﻿using Modelo.Core.Repositorios;
 
-namespace Core.Models
+namespace Modelo.Core.Models
 { 
     public interface IUnitOfWork
     {

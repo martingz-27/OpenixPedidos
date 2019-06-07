@@ -1,9 +1,7 @@
-﻿using System;
+﻿using Modelo.Core.Models.Dominio;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace Core.Models.Dominio
+namespace Modelo.Core.Models.Dominio
 {
     public class Pedido
     {

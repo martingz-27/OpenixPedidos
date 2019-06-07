@@ -1,4 +1,4 @@
-﻿using Core.Models.Dominio;
+﻿using Modelo.Core.Models.Dominio;
 using System.Collections.Generic;
 
 

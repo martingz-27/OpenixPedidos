@@ -1,5 +1,5 @@
-﻿using Core.Models.Dominio;
-using Core.Repositorios;
+﻿using Modelo.Core.Models.Dominio;
+using Modelo.Core.Repositorios;
 using Modelo.Models;
 using System;
 using System.Collections.Generic;

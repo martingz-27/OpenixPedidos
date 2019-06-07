@@ -1,8 +1,8 @@
 ﻿using Modelo.Core.DTO;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using Core.Models.Dominio;
-using Core.Models;
+using Modelo.Core.Models.Dominio;
+using Modelo.Core.Models;
 
 namespace Modelo.Controllers
 {

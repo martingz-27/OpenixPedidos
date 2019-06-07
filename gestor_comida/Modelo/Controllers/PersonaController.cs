@@ -1,5 +1,5 @@
-﻿using Core.Models;
-using Core.Models.Dominio;
+﻿using Modelo.Core.Models;
+using Modelo.Core.Models.Dominio;
 using System.Web.Mvc;
 
 namespace Modelo.Controllers

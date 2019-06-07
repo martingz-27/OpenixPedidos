@@ -1,6 +1,6 @@
-﻿using Core.Models.Dominio;
+﻿using Modelo.Core.Models.Dominio;
 
-namespace Core.Repositorios
+namespace Modelo.Core.Repositorios
 {
     public interface IPedidoRepository
     {

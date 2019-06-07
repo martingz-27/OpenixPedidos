@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Core.Models.Dominio;
+using Modelo.Core.Models.Dominio;
 using Modelo.Models;
 
-namespace Core.Repositorios
+namespace Modelo.Core.Repositorios
 {
     public interface IGuarnicionRepository
     {

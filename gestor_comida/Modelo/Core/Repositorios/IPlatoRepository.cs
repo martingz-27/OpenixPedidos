@@ -1,7 +1,7 @@
-﻿using Core.Models.Dominio;
+﻿using Modelo.Core.Models.Dominio;
 using System.Collections.Generic;
 
-namespace Core.Repositorios
+namespace Modelo.Core.Repositorios
 {
     public interface IPlatoRepository
     {

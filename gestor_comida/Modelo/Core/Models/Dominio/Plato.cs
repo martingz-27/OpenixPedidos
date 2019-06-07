@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Core.Models.Dominio
+namespace Modelo.Core.Models.Dominio
 {
     public class Plato
     {
